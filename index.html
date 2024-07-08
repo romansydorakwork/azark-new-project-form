@@ -21,13 +21,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=1" />
     <meta name="HandheldFriendly" content="true" />
     <title>New Project Form</title>
-    <link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/stylebuilder/static/form-common.css?v=73932fc
-    "/>
+    <link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/stylebuilder/static/form-common.css?v=b13faa2"/>
     <style type="text/css">@media print{*{-webkit-print-color-adjust: exact !important;color-adjust: exact !important;}.form-section{display:inline!important}.form-pagebreak{display:none!important}.form-section-closed{height:auto!important}.page-section{position:initial!important}}</style>
     <link id="custom-font" type="text/css" rel="stylesheet" href="//cdn.jotfor.ms/fonts/?family=Roboto" />
-    <link type="text/css" rel="stylesheet" href="https://cdn03.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?v=3.3.54760"/>
-    <link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/css/styles/payment/payment_styles.css?3.3.54760" />
-    <link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/payment/payment_feature.css?3.3.54760" />
+    <link type="text/css" rel="stylesheet" href="https://cdn03.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?v=3.3.55115"/>
+    <link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/css/styles/payment/payment_styles.css?3.3.55115" />
+    <link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/payment/payment_feature.css?3.3.55115" />
     <style type="text/css" id="form-designer-style">
         /* Injected CSS Code */
     
@@ -606,10 +605,10 @@
     }
     </style>
     
-    <script src="https://cdn03.jotfor.ms/static/prototype.forms.js?v=3.3.54760" type="text/javascript"></script>
-    <script src="https://cdn01.jotfor.ms/static/jotform.forms.js?v=3.3.54760" type="text/javascript"></script>
-    <script src="https://cdn02.jotfor.ms/js/vendor/smoothscroll.min.js?v=3.3.54760" type="text/javascript"></script>
-    <script src="https://cdn03.jotfor.ms/js/errorNavigation.js?v=3.3.54760" type="text/javascript"></script>
+    <script src="https://cdn03.jotfor.ms/static/prototype.forms.js?v=3.3.55115" type="text/javascript"></script>
+    <script src="https://cdn01.jotfor.ms/static/jotform.forms.js?v=3.3.55115" type="text/javascript"></script>
+    <script src="https://cdn02.jotfor.ms/js/vendor/smoothscroll.min.js?v=3.3.55115" type="text/javascript"></script>
+    <script src="https://cdn03.jotfor.ms/js/errorNavigation.js?v=3.3.55115" type="text/javascript"></script>
     <script type="text/javascript">	JotForm.newDefaultTheme = true;
       JotForm.extendsNewTheme = false;
       JotForm.singleProduct = false;
@@ -734,10 +733,10 @@
       <li class="form-line" data-type="control_textbox" id="id_3"><label class="form-label form-label-top form-label-auto" id="label_3" for="input_3" aria-hidden="false"> PROPOSAL MANUAL </label>
         <div id="cid_3" class="form-input-wide" data-layout="half"> <input type="text" id="input_3" name="q3_proposalManual" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:310px" size="310" data-component="textbox" aria-labelledby="label_3" value="" /> </div>
       </li>
-      <li class="form-line" data-type="control_textbox" id="id_333">
-        <label class="form-label form-label-top form-label-auto" id="label_333" for="input_333" aria-hidden="false"> Client </label>
-        <div id="cid_333" class="form-input-wide" data-layout="half">
-          <input type="text" id="input_333" name="q333_client" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:310px" size="310" data-component="textbox" aria-labelledby="label_333" value="" />
+      <li class="form-line jf-required" data-type="control_textbox" id="id_333">
+        <label class="form-label form-label-top form-label-auto" id="label_333" for="input_333" aria-hidden="false"> Client<span class="form-required">*</span> </label>
+        <div id="cid_333" class="form-input-wide jf-required" data-layout="half">
+          <input type="text" id="input_333" name="q333_client" data-type="input-textbox" class="form-textbox validate[required]" data-defaultvalue="" style="width:310px" size="310" data-component="textbox" aria-labelledby="label_333" value="" required=""/>
           <ul id="ul_333">
           </ul>
         </div>
@@ -857,7 +856,18 @@
         </li>
         <li class="form-line jf-required" data-type="control_radio" id="id_19"><label class="form-label form-label-top form-label-auto" id="label_19" aria-hidden="false"> Type<span class="form-required">*</span> </label>
           <div id="cid_19" class="form-input-wide jf-required" data-layout="full">
-            <div class="form-single-column" role="group" aria-labelledby="label_19" data-component="radio"><span class="form-radio-item" style="clear:left"><span class="dragger-item"></span><input type="radio" aria-describedby="label_19" class="form-radio validate[required]" id="input_19_0" name="q19_type" value="New Proposal" required="" /><label id="label_input_19_0" for="input_19_0">New Proposal</label></span><span class="form-radio-item" style="clear:left"><span class="dragger-item"></span><input type="radio" aria-describedby="label_19" class="form-radio validate[required]" id="input_19_1" name="q19_type" value="Invoice Only" required="" /><label id="label_input_19_1" for="input_19_1">Invoice Only</label></span></div>
+            <div class="form-single-column" role="group" aria-labelledby="label_19" data-component="radio">
+              <span class="form-radio-item" style="clear:left">
+                <span class="dragger-item"></span>
+                <input type="radio" aria-describedby="label_19" class="form-radio validate[required]" id="input_19_0" name="q19_type" value="New Proposal" required="" />
+                <label id="label_input_19_0" for="input_19_0">New Proposal</label>
+              </span>
+              <span class="form-radio-item" style="clear:left">
+                <span class="dragger-item"></span>
+                <input type="radio" aria-describedby="label_19" class="form-radio validate[required]" id="input_19_1" name="q19_type" value="Invoice Only" required="" />
+                <label id="label_input_19_1" for="input_19_1">Invoice Only</label>
+              </span>
+            </div>
           </div>
         </li>
         <li class="form-line" data-type="control_dropdown" id="id_20"><label class="form-label form-label-top form-label-auto" id="label_20" for="input_20" aria-hidden="false"> Status </label>
