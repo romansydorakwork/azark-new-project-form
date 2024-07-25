@@ -584,13 +584,13 @@
     #ul_131 li, #ul_132 li, #ul_133 li, #ul_134 li, #ul_135 li, #ul_136 li, #ul_137 li, #ul_138 li, #ul_139 li, #ul_140 li,
     #ul_141 li, #ul_142 li, #ul_143 li, #ul_144 li, #ul_145 li, #ul_146 li, #ul_147 li, #ul_148 li, #ul_149 li, #ul_150 li,
     #ul_151 li, #ul_152 li, #ul_153 li, #ul_154 li, #ul_155 li, #ul_156 li, #ul_157 li, #ul_159 li, #ul_160 li, #ul_161 li {
-      border: 1px solid #cae2ab;
+      border: 1px solid #12121c;
       margin-top: -1px; /* Prevent double borders */
-      background-color:transparent;
+      background-color: #cae2ab;
       padding: 9px;
       text-decoration: none;
       font-size: 16px;
-      color: #cae2ab;
+      color: #12121c;
       display: block;
     }
 
@@ -602,6 +602,23 @@
       color: #cae2ab;
       font-size: 12px;
       display: none;
+    }
+
+    #check-client-data {
+      background-color: #cae2ab;
+      color: #12121c;
+      width: 150px; 
+      height: 30px;
+      margin-top: 3px;
+      font-family: "Montserrat", sans-serif;
+      cursor: pointer;
+      display: none;
+    }
+
+    #client-correctness {
+      display: none;
+      width: 30px;
+      height: 30px;
     }
     </style>
     
@@ -739,6 +756,11 @@
           <input type="text" id="input_333" name="q333_client" data-type="input-textbox" class="form-textbox validate[required]" data-defaultvalue="" style="width:310px" size="310" data-component="textbox" aria-labelledby="label_333" value="" required=""/>
           <ul id="ul_333">
           </ul>
+          <div id="client-check-div" style="display: flex;gap: 10px;align-items: center;justify-content: flex-start;">
+            <button type="button" id="check-client-data">Check Client Data</button>
+            <img src="" id="client-correctness" alt="client-correctness">
+            <p id="missing-companies" style="font-size: 10px;"></p>
+          </div>
         </div>
       </li>
       <li class="form-line" data-type="control_textbox" id="id_344">
@@ -1030,7 +1052,7 @@
         </li>
         <li class="form-line fixed-width jf-required" data-type="control_textbox" id="id_131"><label class="form-label form-label-top" id="label_131" for="input_131" aria-hidden="false"> Services 1<span class="form-required">*</span> </label>
           <div id="cid_131" class="form-input-wide jf-required" data-layout="half">
-            <input type="text" id="input_131" name="q131_services1131" data-type="input-textbox" class="form-textbox validate[required]" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_131" required="" value="" />
+            <input type="text" id="input_131" name="q131_services1131" data-type="input-textbox" class="form-textbox validate[required] serviceInput" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_131" required="" value="" />
             <ul id="ul_131"></ul>
             <p id="p_131" class="service_paragraph"></p>
           </div>
@@ -1048,7 +1070,7 @@
         </li>
         <li class="form-line fixed-width form-field-hidden" style="display:none;" data-type="control_textbox" id="id_132"><label class="form-label form-label-top form-label-auto" id="label_132" for="input_132" aria-hidden="false"> Services 2 </label>
           <div id="cid_132" class="form-input-wide" data-layout="half">
-            <input type="text" id="input_132" name="q132_services2132" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_132" value="" />
+            <input type="text" id="input_132" name="q132_services2132" data-type="input-textbox" class="form-textbox serviceInput" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_132" value="" />
             <ul id="ul_132"></ul>
             <p id="p_132" class="service_paragraph"></p>
           </div>
@@ -1066,7 +1088,7 @@
         </li>
         <li class="form-line fixed-width form-field-hidden" style="display:none;" data-type="control_textbox" id="id_133"><label class="form-label form-label-top form-label-auto" id="label_133" for="input_133" aria-hidden="false"> Services 3 </label>
           <div id="cid_133" class="form-input-wide" data-layout="half">
-            <input type="text" id="input_133" name="q133_services3133" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_133" value="" />
+            <input type="text" id="input_133" name="q133_services3133" data-type="input-textbox" class="form-textbox serviceInput" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_133" value="" />
             <ul id="ul_133"></ul>
             <p id="p_133" class="service_paragraph"></p>
           </div>
@@ -1084,7 +1106,7 @@
         </li>
         <li class="form-line fixed-width form-field-hidden" style="display:none;" data-type="control_textbox" id="id_134"><label class="form-label form-label-top form-label-auto" id="label_134" for="input_134" aria-hidden="false"> Services 4 </label>
           <div id="cid_134" class="form-input-wide" data-layout="half">
-            <input type="text" id="input_134" name="q134_services4134" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_134" value="" />
+            <input type="text" id="input_134" name="q134_services4134" data-type="input-textbox" class="form-textbox serviceInput" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_134" value="" />
             <ul id="ul_134"></ul>
             <p id="p_134" class="service_paragraph"></p>
           </div>
@@ -1102,7 +1124,7 @@
         </li>
         <li class="form-line fixed-width form-field-hidden" style="display:none;" data-type="control_textbox" id="id_135"><label class="form-label form-label-top form-label-auto" id="label_135" for="input_135" aria-hidden="false"> Services 5 </label>
           <div id="cid_135" class="form-input-wide" data-layout="half">
-            <input type="text" id="input_135" name="q135_services5135" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_135" value="" />
+            <input type="text" id="input_135" name="q135_services5135" data-type="input-textbox" class="form-textbox serviceInput" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_135" value="" />
             <ul id="ul_135"></ul>
             <p id="p_135" class="service_paragraph"></p>
           </div>
@@ -1120,7 +1142,7 @@
         </li>
         <li class="form-line fixed-width form-field-hidden" style="display:none;" data-type="control_textbox" id="id_136"><label class="form-label form-label-top form-label-auto" id="label_136" for="input_136" aria-hidden="false"> Services 6 </label>
           <div id="cid_136" class="form-input-wide" data-layout="half">
-            <input type="text" id="input_136" name="q136_services6136" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_136" value="" />
+            <input type="text" id="input_136" name="q136_services6136" data-type="input-textbox" class="form-textbox serviceInput" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_136" value="" />
             <ul id="ul_136"></ul>
             <p id="p_136" class="service_paragraph"></p>
           </div>
@@ -1138,7 +1160,7 @@
         </li>
         <li class="form-line fixed-width form-field-hidden" style="display:none;" data-type="control_textbox" id="id_137"><label class="form-label form-label-top form-label-auto" id="label_137" for="input_137" aria-hidden="false"> Services 7 </label>
           <div id="cid_137" class="form-input-wide" data-layout="half">
-            <input type="text" id="input_137" name="q137_services7137" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_137" value="" />
+            <input type="text" id="input_137" name="q137_services7137" data-type="input-textbox" class="form-textbox serviceInput" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_137" value="" />
             <ul id="ul_137"></ul>
             <p id="p_137" class="service_paragraph"></p>
           </div>
@@ -1156,7 +1178,7 @@
         </li>
         <li class="form-line fixed-width form-field-hidden" style="display:none;" data-type="control_textbox" id="id_138"><label class="form-label form-label-top form-label-auto" id="label_138" for="input_138" aria-hidden="false"> Services 8 </label>
           <div id="cid_138" class="form-input-wide" data-layout="half">
-            <input type="text" id="input_138" name="q138_services8138" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_138" value="" />
+            <input type="text" id="input_138" name="q138_services8138" data-type="input-textbox" class="form-textbox serviceInput" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_138" value="" />
             <ul id="ul_138"></ul>
             <p id="p_138" class="service_paragraph"></p>
           </div>
@@ -1174,7 +1196,7 @@
         </li>
         <li class="form-line fixed-width form-field-hidden" style="display:none;" data-type="control_textbox" id="id_139"><label class="form-label form-label-top form-label-auto" id="label_139" for="input_139" aria-hidden="false"> Services 9 </label>
           <div id="cid_139" class="form-input-wide" data-layout="half">
-            <input type="text" id="input_139" name="q139_services9139" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_139" value="" />
+            <input type="text" id="input_139" name="q139_services9139" data-type="input-textbox" class="form-textbox serviceInput" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_139" value="" />
             <ul id="ul_139"></ul>
             <p id="p_139" class="service_paragraph"></p>
           </div>
@@ -1192,7 +1214,7 @@
         </li>
         <li class="form-line fixed-width form-field-hidden" style="display:none;" data-type="control_textbox" id="id_140"><label class="form-label form-label-top form-label-auto" id="label_140" for="input_140" aria-hidden="false"> Services 10 </label>
           <div id="cid_140" class="form-input-wide" data-layout="half">
-            <input type="text" id="input_140" name="q140_services10140" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_140" value="" />
+            <input type="text" id="input_140" name="q140_services10140" data-type="input-textbox" class="form-textbox serviceInput" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_140" value="" />
             <ul id="ul_140"></ul>
             <p id="p_140" class="service_paragraph"></p>
           </div>
@@ -1210,7 +1232,7 @@
         </li>
         <li class="form-line fixed-width form-field-hidden" style="display:none;" data-type="control_textbox" id="id_141"><label class="form-label form-label-top form-label-auto" id="label_141" for="input_141" aria-hidden="false"> Services 11 </label>
           <div id="cid_141" class="form-input-wide" data-layout="half">
-            <input type="text" id="input_141" name="q141_services11141" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_141" value="" />
+            <input type="text" id="input_141" name="q141_services11141" data-type="input-textbox" class="form-textbox serviceInput" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_141" value="" />
             <ul id="ul_141"></ul>
             <p id="p_141" class="service_paragraph"></p>
           </div>
@@ -1228,7 +1250,7 @@
         </li>
         <li class="form-line fixed-width form-field-hidden" style="display:none;" data-type="control_textbox" id="id_142"><label class="form-label form-label-top form-label-auto" id="label_142" for="input_142" aria-hidden="false"> Services 12 </label>
           <div id="cid_142" class="form-input-wide" data-layout="half">
-            <input type="text" id="input_142" name="q142_services12142" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_142" value="" />
+            <input type="text" id="input_142" name="q142_services12142" data-type="input-textbox" class="form-textbox serviceInput" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_142" value="" />
             <ul id="ul_142"></ul>
             <p id="p_142" class="service_paragraph"></p>
           </div>
@@ -1246,7 +1268,7 @@
         </li>
         <li class="form-line fixed-width form-field-hidden" style="display:none;" data-type="control_textbox" id="id_143"><label class="form-label form-label-top form-label-auto" id="label_143" for="input_143" aria-hidden="false"> Services 13 </label>
           <div id="cid_143" class="form-input-wide" data-layout="half">
-            <input type="text" id="input_143" name="q143_services13143" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_143" value="" />
+            <input type="text" id="input_143" name="q143_services13143" data-type="input-textbox" class="form-textbox serviceInput" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_143" value="" />
             <ul id="ul_143"></ul>
             <p id="p_143" class="service_paragraph"></p>
           </div>
@@ -1264,7 +1286,7 @@
         </li>
         <li class="form-line fixed-width form-field-hidden" style="display:none;" data-type="control_textbox" id="id_144"><label class="form-label form-label-top form-label-auto" id="label_144" for="input_144" aria-hidden="false"> Services 14 </label>
           <div id="cid_144" class="form-input-wide" data-layout="half">
-            <input type="text" id="input_144" name="q144_services14144" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_144" value="" />
+            <input type="text" id="input_144" name="q144_services14144" data-type="input-textbox" class="form-textbox serviceInput" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_144" value="" />
             <ul id="ul_144"></ul>
             <p id="p_144" class="service_paragraph"></p>
           </div>
@@ -1282,7 +1304,7 @@
         </li>
         <li class="form-line fixed-width form-field-hidden" style="display:none;" data-type="control_textbox" id="id_145"><label class="form-label form-label-top form-label-auto" id="label_145" for="input_145" aria-hidden="false"> Services 15 </label>
           <div id="cid_145" class="form-input-wide" data-layout="half">
-            <input type="text" id="input_145" name="q145_services15145" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_145" value="" />
+            <input type="text" id="input_145" name="q145_services15145" data-type="input-textbox" class="form-textbox serviceInput" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_145" value="" />
             <ul id="ul_145"></ul>
             <p id="p_145" class="service_paragraph"></p>
           </div>
@@ -1300,7 +1322,7 @@
         </li>
         <li class="form-line fixed-width form-field-hidden" style="display:none;" data-type="control_textbox" id="id_146"><label class="form-label form-label-top form-label-auto" id="label_146" for="input_146" aria-hidden="false"> Services 16 </label>
           <div id="cid_146" class="form-input-wide" data-layout="half">
-            <input type="text" id="input_146" name="q146_services16146" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_146" value="" />
+            <input type="text" id="input_146" name="q146_services16146" data-type="input-textbox" class="form-textbox serviceInput" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_146" value="" />
             <ul id="ul_146"></ul>
             <p id="p_146" class="service_paragraph"></p>
           </div>
@@ -1318,7 +1340,7 @@
         </li>
         <li class="form-line fixed-width form-field-hidden" style="display:none;" data-type="control_textbox" id="id_147"><label class="form-label form-label-top form-label-auto" id="label_147" for="input_147" aria-hidden="false"> Services 17 </label>
           <div id="cid_147" class="form-input-wide" data-layout="half">
-            <input type="text" id="input_147" name="q147_services17147" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_147" value="" />
+            <input type="text" id="input_147" name="q147_services17147" data-type="input-textbox" class="form-textbox serviceInput" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_147" value="" />
             <ul id="ul_147"></ul>
             <p id="p_147" class="service_paragraph"></p>
           </div>
@@ -1336,7 +1358,7 @@
         </li>
         <li class="form-line fixed-width form-field-hidden" style="display:none;" data-type="control_textbox" id="id_148"><label class="form-label form-label-top form-label-auto" id="label_148" for="input_148" aria-hidden="false"> Services 18 </label>
           <div id="cid_148" class="form-input-wide" data-layout="half">
-            <input type="text" id="input_148" name="q148_services18148" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_148" value="" />
+            <input type="text" id="input_148" name="q148_services18148" data-type="input-textbox" class="form-textbox serviceInput" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_148" value="" />
             <ul id="ul_148"></ul>
             <p id="p_148" class="service_paragraph"></p>
           </div>
@@ -1354,7 +1376,7 @@
         </li>
         <li class="form-line fixed-width form-field-hidden" style="display:none;" data-type="control_textbox" id="id_149"><label class="form-label form-label-top form-label-auto" id="label_149" for="input_149" aria-hidden="false"> Services 19 </label>
           <div id="cid_149" class="form-input-wide" data-layout="half">
-            <input type="text" id="input_149" name="q149_services19149" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_149" value="" />
+            <input type="text" id="input_149" name="q149_services19149" data-type="input-textbox" class="form-textbox serviceInput" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_149" value="" />
             <ul id="ul_149"></ul>
             <p id="p_149" class="service_paragraph"></p>
           </div>
@@ -1372,7 +1394,7 @@
         </li>
         <li class="form-line fixed-width form-field-hidden" style="display:none;" data-type="control_textbox" id="id_150"><label class="form-label form-label-top form-label-auto" id="label_150" for="input_150" aria-hidden="false"> Services 20 </label>
           <div id="cid_150" class="form-input-wide" data-layout="half">
-            <input type="text" id="input_150" name="q150_services20150" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_150" value="" />
+            <input type="text" id="input_150" name="q150_services20150" data-type="input-textbox" class="form-textbox serviceInput" data-defaultvalue="" style="width:600px" size="600" data-component="textbox" aria-labelledby="label_150" value="" />
             <ul id="ul_150"></ul>
             <p id="p_150" class="service_paragraph"></p>
           </div>
@@ -1385,7 +1407,10 @@
         </li>
         <li class="form-line" data-type="control_button" id="id_2">
           <div id="cid_2" class="form-input-wide" data-layout="full">
-            <div data-align="center" class="form-buttons-wrapper form-buttons-center   jsTest-button-wrapperField"><button id="input_2" type="submit" class="form-submit-button form-submit-button-tables-600 submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">Submit</button></div>
+            <div data-align="center" class="form-buttons-wrapper form-buttons-center   jsTest-button-wrapperField">
+              <button id="input_2" type="submit" class="form-submit-button form-submit-button-tables-600 submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">Submit</button>
+            </div>
+            <p id="duplicateMessage" style="display: none; color: red; text-align: center;">There are duplicate services. Please go above and change it.</p>
           </div>
         </li>
         <li style="display:none">Should be Empty: <input type="text" name="website" value="" type="hidden" /></li>
@@ -1819,6 +1844,95 @@
         const inputElement = document.getElementById(inputId);
         const ulElement = document.getElementById(staffUls[index]);
         inputElement.addEventListener('input', (event) => filterStaff(event, ulElement));
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const inputs = document.querySelectorAll('.serviceInput');
+      const submitButton = document.getElementById('input_2');
+      const duplicateMessage = document.getElementById('duplicateMessage');
+
+      // Function to check for duplicate values
+      function hasDuplicates(array) {
+        const valuesMap = new Map();
+        for (let value of array) {
+          const trimmedValue = value.trim();
+          if (trimmedValue !== "") {
+            if (valuesMap.has(trimmedValue)) {
+              return true; // Found duplicate
+            } else {
+              valuesMap.set(trimmedValue, true);
+            }
+          }
+        }
+        return false; // No duplicates found
+      }
+
+      // Function to handle input change and selection
+      function handleInputChange() {
+        // Get current values from all input fields
+        const values = Array.from(inputs, input => input.value);
+        
+        // Check for duplicates
+        if (hasDuplicates(values)) {
+          // If duplicates found, hide submit button and show message
+          submitButton.style.display = 'none';
+          duplicateMessage.style.display = 'block';
+        } else {
+          // If no duplicates, show submit button and hide message
+          submitButton.style.display = 'block';
+          duplicateMessage.style.display = 'none';
+        }
+      }
+
+      // Event listeners for input fields
+      inputs.forEach(function(input) {
+        // Add input event listener
+        input.addEventListener('input', handleInputChange);
+        
+        // Add additional event listener for when value is selected from dropdown
+        input.addEventListener('change', handleInputChange);
+      });
+
+      // Initial check when the page loads
+      handleInputChange();
+    });
+  </script>
+
+  <script>
+    let clientCheckSuccessImgURL = "./images/icons8-check-30.png";
+    let clientCheckRejectImgURL = "./images/icons8-reject-30.png";
+    let checkClientDataButton = document.getElementById('check-client-data');
+    let clientImg = document.getElementById('client-correctness');
+    let missingCompaniesP = document.getElementById('missing-companies');
+
+    let clientInputField = document.getElementById("input_333");
+    clientInputField.addEventListener('input', () => {
+      if (clientInputField.value === "") {
+        checkClientDataButton.style.display = "none";
+        clientImg.style.display = "none";
+        clientImg.src = "";
+        missingCompaniesP.innerText = "";
+      } else {
+        checkClientDataButton.style.display = "block";
+      }
+    })
+
+    checkClientDataButton.addEventListener('click', () => {
+      const foundClient = clients.find(client => client.fields['Full Name'] === clientInputField.value);
+      if ((foundClient.fields['AAPC Harvest client ID'] !== undefined) && (foundClient.fields['ARKCO Harvest client ID'] !== undefined) && (foundClient.fields['AZ Harvest client ID'] !== undefined) && 
+          (foundClient.fields['BVS Harvest client ID'] !== undefined) && (foundClient.fields['VPS Harvest client ID'] !== undefined)) {
+            clientImg.style.display = "block";
+            clientImg.src = clientCheckSuccessImgURL;
+            missingCompaniesP.innerText = "";
+      } else {
+        let companiesArray = ['AAPC Harvest client ID', 'ARKCO Harvest client ID', 'AZ Harvest client ID', 'BVS Harvest client ID', 'VPS Harvest client ID'];
+        let lackedCompanies = companiesArray.find(company => foundClient.fields[company] === undefined);
+        clientImg.style.display = "block";
+        clientImg.src = clientCheckRejectImgURL;
+        missingCompaniesP.innerText = lackedCompanies;
+      }
     });
   </script>
   <script>
