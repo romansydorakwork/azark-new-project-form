@@ -608,7 +608,7 @@
       background-color: #cae2ab;
       color: #12121c;
       width: 150px; 
-      height: 30px;
+      padding: 10px;
       margin-top: 3px;
       font-family: "Montserrat", sans-serif;
       cursor: pointer;
@@ -1921,17 +1921,23 @@
 
     checkClientDataButton.addEventListener('click', () => {
       const foundClient = clients.find(client => client.fields['Full Name'] === clientInputField.value);
-      if ((foundClient.fields['AAPC Harvest client ID'] !== undefined) && (foundClient.fields['ARKCO Harvest client ID'] !== undefined) && (foundClient.fields['AZ Harvest client ID'] !== undefined) && 
-          (foundClient.fields['BVS Harvest client ID'] !== undefined) && (foundClient.fields['VPS Harvest client ID'] !== undefined)) {
-            clientImg.style.display = "block";
-            clientImg.src = clientCheckSuccessImgURL;
-            missingCompaniesP.innerText = "";
-      } else {
-        let companiesArray = ['AAPC Harvest client ID', 'ARKCO Harvest client ID', 'AZ Harvest client ID', 'BVS Harvest client ID', 'VPS Harvest client ID'];
-        let lackedCompanies = companiesArray.find(company => foundClient.fields[company] === undefined);
+      if (foundClient === undefined) {
         clientImg.style.display = "block";
         clientImg.src = clientCheckRejectImgURL;
-        missingCompaniesP.innerText = lackedCompanies;
+        missingCompaniesP.innerText = "Client is not found in Airtable";
+      } else {
+        if ((foundClient.fields['AAPC Harvest client ID'] !== undefined) && (foundClient.fields['ARKCO Harvest client ID'] !== undefined) && (foundClient.fields['AZ Harvest client ID'] !== undefined) && 
+          (foundClient.fields['BVS Harvest client ID'] !== undefined) && (foundClient.fields['VPS Harvest client ID'] !== undefined)) {
+              clientImg.style.display = "block";
+              clientImg.src = clientCheckSuccessImgURL;
+              missingCompaniesP.innerText = "";
+        } else {
+          let companiesArray = ['AAPC Harvest client ID', 'ARKCO Harvest client ID', 'AZ Harvest client ID', 'BVS Harvest client ID', 'VPS Harvest client ID'];
+          let lackedCompanies = companiesArray.find(company => foundClient.fields[company] === undefined);
+          clientImg.style.display = "block";
+          clientImg.src = clientCheckRejectImgURL;
+          missingCompaniesP.innerText = lackedCompanies;
+        }
       }
     });
   </script>
